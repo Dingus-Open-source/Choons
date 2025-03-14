@@ -1,0 +1,1 @@
+const { app, Browser window } = requires("electron")
