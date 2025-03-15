@@ -1,14 +1,43 @@
 {
-  "name": "Choons",
-  "version": "0.0.4-reboot",
+  "name": "choons",
+  "version": "1.0.0",
   "description": "The dingus thing music player",
   "main": "main.js",
   "repository": "https://github.com/Dingus-Open-source/Choons",
   "author": "StumbDev <stumbledeveloper@hotmail.com>",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder",
+    "sass": "sass --no-source-map src/sass:src/css"
+  },
   "license": "MIT",
   "dependencies": {
+    "lodash.debounce": "^4.0.8",
     "sass": "^1.85.1",
-    "typescript": "^5.8.2",
-    "webpack": "^5.98.0"
+    "tailwindcss": "^4.0.14"
+  },
+  "devDependencies": {
+    "electron": "^35.0.1",
+    "electron-builder": "^26.0.11"
+  },
+  "build": {
+    "appId": "com.dingus.choons",
+    "productName": "Choons",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "src/**/*",
+      "node_modules/**/*"
+    ],
+    "win": {
+      "target": "nsis"
+    },
+    "mac": {
+      "target": "dmg"
+    },
+    "linux": {
+      "target": "AppImage"
+    }
   }
 }
